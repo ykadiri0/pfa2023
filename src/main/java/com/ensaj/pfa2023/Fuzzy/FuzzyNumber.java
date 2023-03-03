@@ -3,6 +3,7 @@ package com.ensaj.pfa2023.Fuzzy;
 
 public class FuzzyNumber {
     private  double lowerBound;
+    private  double elhadi;
 
     private  double midlbound;
     private  double upperBound;

@@ -1,0 +1,47 @@
+package com.ensaj.pfa2023.Model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class SousCritere {
+    @Id
+    private String id;
+    @DBRef
+    private Critere critere;
+    private String name;
+    private Double poids;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Critere getCritere() {
+        return critere;
+    }
+
+    public void setCritere(Critere critere) {
+        this.critere = critere;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPoids() {
+        return poids;
+    }
+
+    public void setPoinds(Double poids) {
+        this.poids = poids;
+    }
+}

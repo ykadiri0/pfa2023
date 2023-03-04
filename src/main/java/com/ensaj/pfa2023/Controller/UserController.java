@@ -2,6 +2,7 @@ package com.ensaj.pfa2023.Controller;
 
 import com.ensaj.pfa2023.Model.Users;
 import com.ensaj.pfa2023.Repository.UserRepository;
+import jakarta.websocket.server.PathParam;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +21,10 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("getusers")
-    public List<Users> getAllusers(){
+    public List<Users> getAllusers(@PathParam("id") String id){
 
         List<String> list = new ArrayList<>();
-        list.add("6400ee2a4a5f0908bb7ff6e4");
+        list.add(id);
 
 
         Iterable<String> iterable = list;

@@ -4,6 +4,7 @@ import com.ensaj.pfa2023.Model.Affectation;
 import com.ensaj.pfa2023.Model.Projet;
 import com.ensaj.pfa2023.Repository.AffectationRepository;
 import com.ensaj.pfa2023.Repository.ProjetRepository;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +19,10 @@ public class AffectationController {
     AffectationRepository affectationRepository;
 
     @GetMapping("getaffectation")
-    public List<Affectation> getAllproject(){
+    public List<Affectation> getAllproject(@PathParam("id") String id){
 
         List<String> list = new ArrayList<>();
-        list.add("6400ee2a4a5f0908bb7ff6e4");
+        list.add(id);
 
 
         Iterable<String> iterable = list;

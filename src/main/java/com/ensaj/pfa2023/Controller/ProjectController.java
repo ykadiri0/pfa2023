@@ -31,7 +31,7 @@ public class ProjectController {
     }
     @GetMapping("getprojetss")
     public List<Projet> getprojectA(){
-
+//testtttt
 
 
         return   projetRepository.findAll();

@@ -2,6 +2,7 @@ package com.ensaj.pfa2023.Controller;
 
 import com.ensaj.pfa2023.Model.Critere;
 import com.ensaj.pfa2023.Model.RelationCriters;
+import com.ensaj.pfa2023.Model.Users;
 import com.ensaj.pfa2023.Repository.CritereRepository;
 import com.ensaj.pfa2023.Repository.RelationCritereRepository;
 import jakarta.websocket.server.PathParam;
@@ -33,5 +34,15 @@ public class RelationCritereController {
     @PostMapping("saveRC")
     public RelationCriters savecritere(@RequestBody RelationCriters relationCriters){
         return  relationCritereRepository.save(relationCriters);
+    }
+    @GetMapping("getRelationCbyuser")
+    public List<RelationCriters> getAllcriterebyuser(@PathParam("id") String id){
+        List<String> list = new ArrayList<>();
+        list.add(id);
+        Iterable<String> iterable = list;
+        List<RelationCriters> listemat=relationCritereRepository.findRelationCritersByUsers(new Users(iterable));
+      //  int a=listemat.get(0).getCritere1().getProjet().getNumCritere();
+
+        return   relationCritereRepository.findAllById(iterable);
     }
 }

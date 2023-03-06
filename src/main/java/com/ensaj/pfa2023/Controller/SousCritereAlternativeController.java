@@ -19,7 +19,7 @@ public class SousCritereAlternativeController {
     @Autowired
     SousCritereAlternativeRepository sousCritereAlternativeRepository;
 
-    @GetMapping("getSousCritere")
+    @GetMapping("getSousCritereA")
     public List<SousCritereAlternative> getAllSousCriteresAlternative(@PathParam("id") String id){
 
         List<String> list = new ArrayList<>();
@@ -30,7 +30,7 @@ public class SousCritereAlternativeController {
 
         return   sousCritereAlternativeRepository.findAll();
     }
-    @PostMapping("saveSousCritere")
+    @PostMapping("saveSousCritereA")
     public SousCritereAlternative saveSousCritereAlternative(@RequestBody SousCritereAlternative affectation){
         return  sousCritereAlternativeRepository.save(affectation);
     }

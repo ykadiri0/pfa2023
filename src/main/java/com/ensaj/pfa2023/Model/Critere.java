@@ -20,6 +20,16 @@ public class Critere {
     @DBRef
     private Projet projet;
     private int numSoucritere;
+    private int index;
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     private Double poids;
 
 

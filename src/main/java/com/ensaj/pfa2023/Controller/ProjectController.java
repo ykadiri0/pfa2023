@@ -29,6 +29,13 @@ public class ProjectController {
 
         return   projetRepository.findAllById(iterable);
     }
+    @GetMapping("getprojetss")
+    public List<Projet> getprojectA(){
+
+
+
+        return   projetRepository.findAll();
+    }
     @PostMapping("saveprojet")
     public Projet getAllusers(@RequestBody Projet projet){
         return  projetRepository.save(projet);

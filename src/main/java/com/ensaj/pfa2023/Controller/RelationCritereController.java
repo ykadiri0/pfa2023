@@ -37,12 +37,10 @@ public class RelationCritereController {
     }
     @GetMapping("getRelationCbyuser")
     public List<RelationCriters> getAllcriterebyuser(@PathParam("id") String id){
-        List<String> list = new ArrayList<>();
-        list.add(id);
-        Iterable<String> iterable = list;
-        List<RelationCriters> listemat=relationCritereRepository.findRelationCritersByUsers(new Users(iterable));
+        System.out.println(id);
+        List<RelationCriters> listemat=relationCritereRepository.findRelationCritersByUsers(new Users(id));
       //  int a=listemat.get(0).getCritere1().getProjet().getNumCritere();
 
-        return   relationCritereRepository.findAllById(iterable);
+        return   listemat;
     }
 }

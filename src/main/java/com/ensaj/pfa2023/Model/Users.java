@@ -23,8 +23,8 @@ public class Users {
         this.role = role;
     }
 
-    public Users(Iterable<String> iterable) {
-        this.id=iterable.toString();
+    public Users(String  id) {
+        this.id=id;
     }
 
     public String getId() {

@@ -26,6 +26,10 @@ public class Projet {
 
     }
 
+    public Projet(String id) {
+        this.id=id;
+    }
+
     public String getName() {
         return name;
     }

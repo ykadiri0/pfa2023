@@ -29,6 +29,12 @@ public class AffectationController {
 
         return   affectationRepository.findAll();
     }
+    @GetMapping("getaffectationbyProject")
+    public List<Affectation> getAllusersbyproject(@PathParam("id") String id){
+
+
+        return   affectationRepository.findAffectationByProjet(new Projet(id));
+    }
     @PostMapping("saveaffectation")
     public Affectation getAllusers(@RequestBody Affectation affectation){
         return  affectationRepository.save(affectation);

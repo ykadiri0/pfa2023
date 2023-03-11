@@ -18,6 +18,8 @@ import java.util.List;
 public class CritrereController {
     @Autowired
     CritereRepository critereRepository;
+    @Autowired
+    ProjetRepository projetRepository;
 
     @GetMapping("getcritere")
     public List<Critere> getAllcritere(){
@@ -29,6 +31,11 @@ public class CritrereController {
         list.add(id);
         Iterable<String> iterable = list;
         return   critereRepository.findAllById(iterable);
+    }
+
+    @GetMapping("getbyproject")
+    public List<Critere> getAllcriterebyProjet(@PathParam("id") String id){
+        return List.of(critereRepository.getCritereByProjetId(id));
     }
     @PostMapping("savecritere")
     public Critere savecritere(@RequestBody Critere critere){

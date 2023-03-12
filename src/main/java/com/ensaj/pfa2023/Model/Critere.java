@@ -9,6 +9,17 @@ public class Critere {
     @Id
     private String id;
 
+
+    @DBRef
+    private Projet projet;
+    private int numSoucritere;
+    private int index;
+
+
+
+    private Double poids;
+
+
     public Projet getProjet() {
         return projet;
     }
@@ -17,11 +28,7 @@ public class Critere {
         this.projet = projet;
     }
 
-    @DBRef
-    private Projet projet;
-    private int numSoucritere;
-    private int index;
-
+    private String name;
     public int getIndex() {
         return index;
     }
@@ -29,12 +36,6 @@ public class Critere {
     public void setIndex(int index) {
         this.index = index;
     }
-
-    private Double poids;
-
-
-
-    private String name;
 
     public String getName() {
         return name;

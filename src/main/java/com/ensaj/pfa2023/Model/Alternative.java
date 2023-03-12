@@ -8,6 +8,15 @@ public class Alternative {
     @Id
     private String id;
     private String name;
+    private Projet projet;
+
+    public Projet getProjet() {
+        return projet;
+    }
+
+    public void setProjet(Projet projet) {
+        this.projet = projet;
+    }
 
     public String getId() {
         return id;

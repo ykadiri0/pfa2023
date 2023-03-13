@@ -23,14 +23,7 @@ public class SousCritereController {
     CritereRepository critereRepository;
 
     @GetMapping("getSousCritere")
-    public List<SousCritere> getAllSousCriteres(@PathParam("id") String id){
-
-        List<String> list = new ArrayList<>();
-        list.add(id);
-
-
-        Iterable<String> iterable = list;
-
+    public List<SousCritere> getAllSousCriteres(){
         return   sousCritereRepository.findAll();
     }
 

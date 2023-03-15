@@ -1,6 +1,7 @@
 package com.ensaj.pfa2023.Model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -8,6 +9,7 @@ public class Alternative {
     @Id
     private String id;
     private String name;
+    @DBRef
     private Projet projet;
 
     public Projet getProjet() {

@@ -35,7 +35,12 @@ public class CritrereController {
 
     @GetMapping("getbyproject")
     public List<Critere> getAllcriterebyProjet(@PathParam("id") String id){
-        return List.of(critereRepository.getCritereByProjetId(id));
+        return critereRepository.getCritereByProjetId(id);
+    }
+
+    @GetMapping("getbyid")
+    public Critere getcriterebyId(@PathParam("id") String id){
+        return critereRepository.findAllById(id);
     }
     @PostMapping("savecritere")
     public Critere savecritere(@RequestBody Critere critere){

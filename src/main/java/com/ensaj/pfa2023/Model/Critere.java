@@ -18,6 +18,7 @@ public class Critere {
 
 
     private Double poids;
+    private String name;
 
 
     public Projet getProjet() {
@@ -28,7 +29,6 @@ public class Critere {
         this.projet = projet;
     }
 
-    private String name;
     public int getIndex() {
         return index;
     }
@@ -44,6 +44,7 @@ public class Critere {
     public void setName(String name) {
         this.name = name;
     }
+
 
 
     public String getId() {

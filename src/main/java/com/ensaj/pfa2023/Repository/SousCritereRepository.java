@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface SousCritereRepository extends MongoRepository<SousCritere,String> {
     List<SousCritere> findAllByCritere(Critere critere);
+    List<SousCritere> findSousCriteresByCritere_Id(String id);
 }

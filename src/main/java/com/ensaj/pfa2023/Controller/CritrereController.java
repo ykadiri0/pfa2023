@@ -42,6 +42,8 @@ public class CritrereController {
     public Critere getcriterebyId(@PathParam("id") String id){
         return critereRepository.findAllById(id);
     }
+
+
     @PostMapping("savecritere")
     public Critere savecritere(@RequestBody Critere critere){
         return  critereRepository.save(critere);

@@ -1,6 +1,7 @@
 package com.ensaj.pfa2023.Controller;
 
 import com.ensaj.pfa2023.Model.Affectation;
+import com.ensaj.pfa2023.Model.Critere;
 import com.ensaj.pfa2023.Model.SousCritere;
 import com.ensaj.pfa2023.Repository.AffectationRepository;
 import com.ensaj.pfa2023.Repository.CritereRepository;
@@ -36,5 +37,8 @@ public class SousCritereController {
     public SousCritere saveSousCritere(@RequestBody SousCritere affectation){
         return  sousCritereRepository.save(affectation);
     }
-
+    @GetMapping("getbycritere")
+    public List<SousCritere> getAllSouscriterebyCritere(@PathParam("id") String id){
+        return sousCritereRepository.findSousCriteresByCritere_Id(id);
+    }
 }

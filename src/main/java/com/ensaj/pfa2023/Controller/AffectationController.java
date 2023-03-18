@@ -25,6 +25,8 @@ public class AffectationController {
 
     @Autowired
     UserRepository userRepository;
+
+
     @GetMapping("getaffectation")
     public List<Affectation> getAllproject(@PathParam("id") String id){
 

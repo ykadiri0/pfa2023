@@ -2,6 +2,7 @@ package com.ensaj.pfa2023.Model;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 @ComponentScan
 @Document
@@ -12,11 +13,12 @@ public class Users {
     private String email;
     private String password;
     private String role;
+    private boolean validate=false;
     public Users() {
 
     }
 
-    public Users(String prenom, String email, String password, String role) {
+    public Users(String prenom,String email, String password, String role) {
         this.prenom = prenom;
         this.email = email;
         this.password = password;

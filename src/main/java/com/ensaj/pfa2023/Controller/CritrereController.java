@@ -37,6 +37,13 @@ public class CritrereController {
     public List<Critere> getAllcriterebyProjet(@PathParam("id") String id){
         return critereRepository.getCritereByProjetId(id);
     }
+    @GetMapping("setnumsc")
+    public Critere setnumsc(@PathParam("id") String id,@PathParam("nsc") int nsc ){
+        List<Critere> l=getAllcriterebyid(id);
+        l.get(0).setNumSoucritere(nsc);
+        Critere c=l.get(0);
+        return critereRepository.save(c);
+    }
 
     @GetMapping("getbyid")
     public Critere getcriterebyId(@PathParam("id") String id){

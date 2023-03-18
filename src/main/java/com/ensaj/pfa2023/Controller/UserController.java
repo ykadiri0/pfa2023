@@ -7,13 +7,16 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200/")
+
 @RestController
 public class UserController {
     @Autowired
@@ -37,8 +40,11 @@ public class UserController {
     }
     @GetMapping("getusers")
     public List<Users> getAllusers(@PathParam("id") String id){
+
         List<String> list = new ArrayList<>();
         list.add(id);
+
+
         Iterable<String> iterable = list;
 
         return   userRepository.findAllById(iterable);

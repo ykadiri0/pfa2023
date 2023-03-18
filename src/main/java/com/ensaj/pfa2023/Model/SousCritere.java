@@ -14,6 +14,13 @@ public class SousCritere {
     private Double poids;
     private int index;
 
+    public SousCritere(String id) {
+        this.id=id;
+    }
+
+    public SousCritere() {
+    }
+
     public void setPoids(Double poids) {
         this.poids = poids;
     }

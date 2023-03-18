@@ -12,11 +12,11 @@ public class Projet {
     @Id
     private String id;
     private String name;
-    private String numCritere;
-    private String numAlternative;
+    private int numCritere;
+    private int numAlternative;
     private Date date;
 
-    public Projet(String name, String numCritere, String numAlternative, Date date) {
+    public Projet(String name, int numCritere, int numAlternative, Date date) {
         this.name = name;
         this.numCritere = numCritere;
         this.numAlternative = numAlternative;
@@ -46,19 +46,19 @@ public class Projet {
         this.id = id;
     }
 
-    public String getNumCritere() {
+    public int getNumCritere() {
         return numCritere;
     }
 
-    public void setNumCritere(String numCritere) {
+    public void setNumCritere(int numCritere) {
         this.numCritere = numCritere;
     }
 
-    public String getNumAlternative() {
+    public int getNumAlternative() {
         return numAlternative;
     }
 
-    public void setNumAlternative(String numAlternative) {
+    public void setNumAlternative(int numAlternative) {
         this.numAlternative = numAlternative;
     }
 

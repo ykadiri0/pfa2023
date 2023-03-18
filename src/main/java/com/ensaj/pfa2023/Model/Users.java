@@ -7,6 +7,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ComponentScan
 @Document
 public class Users {
+    public boolean isValidate() {
+        return validate;
+    }
+
+    public void setValidate(boolean validate) {
+        this.validate = validate;
+    }
+
     @Id
     private String id;
     private String prenom;

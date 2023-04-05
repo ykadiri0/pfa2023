@@ -51,7 +51,16 @@ public class UserController {
     }
     @PostMapping("saveuser")
     public Users getAllusers(@RequestBody Users users){
-        sendSimpleEmail(users.getEmail(), users.getPrenom(),"this is your password" +users.getPassword());
-        return  userRepository.save(users);
+        Users users1=userRepository.save(users);
+        String multilineString = " Dear "+users.getEmail()+",\n" +
+                " I hope this email finds you well. As per your request, I am writing to provide you with your login credentials for the Fuzzy AHP APP\n" +
+                " Your login details are as follows:"+
+                " Your login details are as follows:\n"+
+                " Username: "+users.getEmail()+"\n"+
+                " Password: "+users.getPassword()+"\n"+
+                " Please keep this information confidential and do not share it with anyone.\n"+
+                "  Best regards.\n";
+        //sendSimpleEmail(users.getEmail(), users.getPrenom(),multilineString +users.getPassword());
+        return  users1;
     }
 }

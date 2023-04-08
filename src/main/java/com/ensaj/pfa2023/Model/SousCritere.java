@@ -6,6 +6,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class SousCritere {
+    public boolean isType() {
+        return type;
+    }
+
+    public void setType(boolean type) {
+        this.type = type;
+    }
+
+    public SousCritere(Critere critere, String name, Double poids, int index, boolean type) {
+        this.critere = critere;
+        this.name = name;
+        this.poids = poids;
+        this.index = index;
+        this.type = type;
+    }
+
     @Id
     private String id;
     @DBRef
@@ -32,6 +48,8 @@ private boolean costF;
     public void setCostF(boolean costF) {
         this.costF = costF;
     }
+
+    private boolean type;
 
     public SousCritere(String id) {
         this.id=id;

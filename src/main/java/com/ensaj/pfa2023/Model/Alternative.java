@@ -9,8 +9,17 @@ public class Alternative {
     @Id
     private String id;
     private String name;
+    private int index;
     @DBRef
     private Projet projet;
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
     public Projet getProjet() {
         return projet;

@@ -11,8 +11,18 @@ public class SousCritere {
     @DBRef
     private Critere critere;
     private String name;
+
+    public int getGbindex() {
+        return gbindex;
+    }
+
+    public void setGbindex(int gbindex) {
+        this.gbindex = gbindex;
+    }
+
     private Double poids;
     private int index;
+    private int gbindex;
 private boolean costF;
 
     public boolean isCostF() {

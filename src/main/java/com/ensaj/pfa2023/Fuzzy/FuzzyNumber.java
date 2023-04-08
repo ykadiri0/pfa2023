@@ -13,6 +13,9 @@ public class FuzzyNumber {
         this.midlbound=midlbound;
     }
 
+    public FuzzyNumber() {
+    }
+
     public void setLowerBound(double lowerBound) {
         this.lowerBound = lowerBound;
     }

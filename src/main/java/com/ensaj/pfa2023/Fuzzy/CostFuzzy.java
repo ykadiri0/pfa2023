@@ -12,6 +12,8 @@ public class CostFuzzy {
         this.costOrbenef = costOrbenef;
     }
 
+
+
     public FuzzyNumber getFuzzyNumber() {
         return fuzzyNumber;
     }

@@ -44,7 +44,10 @@ public class AffectationController {
 
         return   affectationRepository.findAffectationByProjet(new Projet(id));
     }
-
+    @GetMapping("getaffectationbyId")
+    public Affectation findAffById(@PathParam("id") String id){
+        return   affectationRepository.findAffectationsById(id);
+    }
     @GetMapping("getaffectationbyUser")
     public List<Affectation> getAllProjectsbyUser(@PathParam("id") String id){
 

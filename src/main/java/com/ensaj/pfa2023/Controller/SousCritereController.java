@@ -37,8 +37,11 @@ public class SousCritereController {
     public SousCritere saveSousCritere(@RequestBody SousCritere affectation){
         return  sousCritereRepository.save(affectation);
     }
+
     @GetMapping("getbycritere")
     public List<SousCritere> getAllSouscriterebyCritere(@PathParam("id") String id){
         return sousCritereRepository.findSousCriteresByCritere_Id(id);
     }
+
+
 }

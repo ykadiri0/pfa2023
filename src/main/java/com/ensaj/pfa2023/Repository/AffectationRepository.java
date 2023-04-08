@@ -17,4 +17,5 @@ public interface AffectationRepository extends MongoRepository<Affectation,Strin
     List<Affectation> findAffectationByUsers(Users users);
 
     List<Affectation> findAffectationsByProjetId(String id);
+    Affectation findAffectationsById(String id);
 }

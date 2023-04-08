@@ -1,5 +1,6 @@
 package com.ensaj.pfa2023.Model;
 
+import com.ensaj.pfa2023.Fuzzy.CostFuzzy;
 import com.ensaj.pfa2023.Fuzzy.FuzzyNumber;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -15,7 +16,8 @@ public class SousCritereAlternative {
     private Alternative alternative;
     @DBRef
     private Users users;
-    private FuzzyNumber poids;
+
+    private CostFuzzy poids;
 
     public String getId() {
         return id;
@@ -49,11 +51,11 @@ public class SousCritereAlternative {
         this.users = users;
     }
 
-    public FuzzyNumber getPoids() {
+    public CostFuzzy getCostFuzzy() {
         return poids;
     }
 
-    public void setPoids(FuzzyNumber poids) {
+    public void setCostFuzzy(CostFuzzy poids) {
         this.poids = poids;
     }
 }

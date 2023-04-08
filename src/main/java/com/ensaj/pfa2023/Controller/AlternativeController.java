@@ -1,5 +1,6 @@
 package com.ensaj.pfa2023.Controller;
 
+import com.ensaj.pfa2023.Model.Affectation;
 import com.ensaj.pfa2023.Model.Alternative;
 import com.ensaj.pfa2023.Model.RelationSousCriteres;
 import com.ensaj.pfa2023.Repository.AlternativeRepository;
@@ -34,5 +35,8 @@ public class AlternativeController {
     public Alternative saveAlternative(@RequestBody Alternative affectation){
         return  alternativeRepository.save(affectation);
     }
-
+    @GetMapping("getalternativebyId")
+    public List<Alternative> findAffById(@PathParam("id") String id){
+        return alternativeRepository.findAlternativesByProjet_Id(id);
+    }
 }

@@ -13,6 +13,15 @@ public class SousCritere {
     private String name;
     private Double poids;
     private int index;
+private boolean costF;
+
+    public boolean isCostF() {
+        return costF;
+    }
+
+    public void setCostF(boolean costF) {
+        this.costF = costF;
+    }
 
     public SousCritere(String id) {
         this.id=id;

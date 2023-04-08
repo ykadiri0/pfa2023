@@ -2,11 +2,16 @@ package com.ensaj.pfa2023.Controller;
 
 import com.ensaj.pfa2023.Fuzzy.CostFuzzy;
 import com.ensaj.pfa2023.Fuzzy.FuzzyNumber;
-import com.ensaj.pfa2023.Model.*;
-import com.ensaj.pfa2023.Repository.*;
+import com.ensaj.pfa2023.Model.Alternative;
+import com.ensaj.pfa2023.Model.SousCritere;
+import com.ensaj.pfa2023.Model.SousCritereAlternative;
+import com.ensaj.pfa2023.Model.Users;
+import com.ensaj.pfa2023.Repository.AlternativeRepository;
+import com.ensaj.pfa2023.Repository.SousCritereAlternativeRepository;
+import com.ensaj.pfa2023.Repository.SousCritereRepository;
+import com.ensaj.pfa2023.Repository.UserRepository;
 import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,7 +28,6 @@ public class SousCritereAlternativeController {
     AlternativeRepository alternativeRepository;
     @Autowired
     UserRepository userRepository;
-
     @GetMapping("getSousCritereA")
     public List<SousCritereAlternative> getAllSousCriteresAlternative(@PathParam("id") String id){
 
@@ -72,4 +76,10 @@ public class SousCritereAlternativeController {
         affectation.setCostFuzzy(costFuzzy);
         return sousCritereAlternativeRepository.save(affectation);
     }
+    @GetMapping("getSAbyUser")
+    public List<SousCritereAlternative> getprojectn(@RequestParam("id") String id){
+        return sousCritereAlternativeRepository.findSousCritereAlternativeByUsers(new Users(id));
+    }
+
+
 }

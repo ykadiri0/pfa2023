@@ -32,6 +32,20 @@ public class SousCritereController {
     public List<SousCritere> getSousCriteresByc(@PathParam("id") String id){
         return   sousCritereRepository.findAllByCritere(critereRepository.findAllById(id));
     }
+    @GetMapping("getSousCriterebyprojet")
+    public List<SousCritere> getSousCriteresByprojet(@PathParam("id") String id){
+        List<Critere> criters =critereRepository.getCritereByProjetId(id);
+        List<SousCritere> sousCriteres =new ArrayList<>();
+        for(Critere in :criters){
+            List<SousCritere> f=sousCritereRepository.findAllByCritere(in);
+            for(SousCritere sc:f ){
+                sousCriteres.add(sc);
+            }
+        }
+        return   sousCriteres;
+    }
+
+
 
     @PostMapping("saveSousCritere")
     public SousCritere saveSousCritere(@RequestBody SousCritere affectation){

@@ -15,8 +15,6 @@ public class Critere {
     private int numSoucritere;
     private int index;
 
-
-
     private Double poids;
     private String name;
 

@@ -6,10 +6,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Alternative {
+
+
     @Id
     private String id;
     private String name;
+
     private int index;
+    private double rank;
     @DBRef
     private Projet projet;
 
@@ -43,5 +47,12 @@ public class Alternative {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public double getRank() {
+        return rank;
+    }
+
+    public void setRank(double rank) {
+        this.rank = rank;
     }
 }

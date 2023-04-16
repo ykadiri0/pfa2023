@@ -11,18 +11,26 @@ public class AnalyseSens {
     @Id
     private String id;
     @DBRef
-    private String Projet;
+    private Projet projet;
     @DBRef
     private List<Alternative>  listrank;
 
     private String type;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public AnalyseSens() {
     }
 
-    public AnalyseSens(String id, String projet, List<Alternative> listrank) {
+    public AnalyseSens(String id, Projet projet, List<Alternative> listrank) {
         this.id = id;
-        Projet = projet;
+        projet = projet;
         this.listrank = listrank;
     }
 
@@ -34,12 +42,8 @@ public class AnalyseSens {
         this.id = id;
     }
 
-    public String getProjet() {
-        return Projet;
-    }
-
-    public void setProjet(String projet) {
-        Projet = projet;
+    public AnalyseSens(Projet projet) {
+        projet = projet;
     }
 
     public List<Alternative> getListrank() {

@@ -12,5 +12,7 @@ import java.util.List;
 @Repository
 public interface AnalyseSensRepository extends MongoRepository<AnalyseSens,String> {
 
+    //List<AnalyseSens> findAnalyseSensByProjet(Projet projet);
     List<AnalyseSens> findAnalyseSensByProjet(Projet projet);
 }
+
